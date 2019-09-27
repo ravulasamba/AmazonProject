@@ -109,7 +109,7 @@
 				<configuration>
 
 					<suiteXmlFiles>
-						<suiteXmlFile>/src/test/resources/testng_sanity.xml</suiteXmlFile>
+						<suiteXmlFile>${project.basedir}/src/test/resources/testng_sanity.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

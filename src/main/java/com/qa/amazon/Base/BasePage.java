@@ -39,7 +39,7 @@ public class BasePage {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			//WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver", "C:\\MyProjects\\AmazonProject\\src\\test\\resources\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
 			if (headless.equalsIgnoreCase("yes")) {
 				ChromeOptions co = new ChromeOptions();
 				co.addArguments("--headless");

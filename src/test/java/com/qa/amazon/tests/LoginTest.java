@@ -12,7 +12,7 @@ import com.qa.amazon.Base.BasePage;
 import com.qa.amazon.pages.HomePage;
 import com.qa.amazon.pages.LandingPage;
 import com.qa.amazon.pages.LoginPage;
-import com.qa.amazon.util.Constants;
+import com.qa.amazon.util.Constants1;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
@@ -51,7 +51,7 @@ public class LoginTest {
 		
 		String title = homePage.getHomePageTitle();
 		System.out.println(title);
-		Assert.assertEquals(title, Constants.HOME_PAGE_TITLE, "login page title is in correct...");
+		Assert.assertEquals(title, Constants1.HOME_PAGE_TITLE, "login page title is in correct...");
 		
 		homePage.clickSignOut();
 	}

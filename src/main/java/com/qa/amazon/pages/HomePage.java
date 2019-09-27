@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.amazon.Base.BasePage;
+import com.qa.amazon.util.Constants1;
 import com.qa.amazon.util.ElementUtil;
-import com.qa.amazon.util.Constants;
 
 public class HomePage extends BasePage{
 	
@@ -22,7 +22,7 @@ public class HomePage extends BasePage{
 			}
 			
 			public String getHomePageTitle() {
-				return elementUtil.waitForPageTitle(Constants.HOME_PAGE_TITLE);
+				return elementUtil.waitForPageTitle(Constants1.HOME_PAGE_TITLE);
 			}
 			
 			public LoginPage clickSignOut(){

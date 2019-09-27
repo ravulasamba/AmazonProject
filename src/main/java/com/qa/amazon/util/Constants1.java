@@ -1,6 +1,6 @@
 package com.qa.amazon.util;
 
-public class Constants {
+public class Constants1 {
 
 	//storing all the constants
 	

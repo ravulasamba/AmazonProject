@@ -25,7 +25,7 @@ public class ElementUtil extends BasePage {
 		try {
 			element = driver.findElement(locator);
 			if (flash.equalsIgnoreCase("yes")) {
-				JavaScriptUtil.flash(element, driver);
+				//JavaScriptUtil.flash(element, driver);
 			}
 		} catch (Exception e) {
 			System.out.println("Some exception occurred while creating webelement " + locator);

@@ -65,8 +65,8 @@ public class BasePage {
 				co.addArguments("--headless");
 				driver = new ChromeDriver(co);
 			} else {
-				//driver = new ChromeDriver();
-				driver = new RemoteWebDriver(new URL(URL), caps);
+				driver = new ChromeDriver();
+				//driver = new RemoteWebDriver(new URL(URL), caps);
 			}
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver.exe");

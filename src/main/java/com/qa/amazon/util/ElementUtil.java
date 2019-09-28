@@ -64,6 +64,17 @@ public class ElementUtil extends BasePage {
 		}
 		return text;
 	}
+	
+	public String doGetInnerText(By locator) {
+		String text = null;
+		waitForElementPresent(locator);
+		try {
+			text = getElement(locator).getAttribute("innertext");
+		} catch (Exception e) {
+			System.out.println("Some exception occurred while sending to webelement " + locator);
+		}
+		return text;
+	}
 
 	public String waitForPageTitle(String title) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);

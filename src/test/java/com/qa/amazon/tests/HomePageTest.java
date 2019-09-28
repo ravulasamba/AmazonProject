@@ -11,25 +11,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qa.amazon.Base.BasePage;
 import com.qa.amazon.pages.HomePage;
-import com.qa.amazon.pages.LandingPage;
-import com.qa.amazon.pages.LoginPage;
 import com.qa.amazon.util.Constants1;
 import com.qa.amazon.util.TestUtil;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class LoginTest extends ExtentBase{
-	
+public class HomePageTest extends ExtentBase{
+
 	WebDriver driver;
 	Properties prop;
 	BasePage basePage;
-	LandingPage landingPage;
-	LoginPage loginPage;
 	HomePage homePage;
 	
 	@Parameters("browser")
@@ -38,27 +33,28 @@ public class LoginTest extends ExtentBase{
 		basePage = new BasePage();
 		prop = basePage.initialize_properties();
 		driver = basePage.initialize_driver(prop,browser);
-		landingPage = new LandingPage(driver);
-		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
 		
 	}
 	
-	@Test(priority = 1, description = "login test with correct username and correct password, check title and logout....")
-	public void loginTest() throws InterruptedException {
-		extentTest = extent.startTest("loginTest");
-		if (landingPage.hoverOnSignIn()){
-			landingPage.clickSignIn();
-			loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
-		}
-		else
-			System.out.println(landingPage.hoverOnSignIn());
-		
+	@Test(priority=2)
+	public void checkHomePageTitle(){
+		extentTest = extent.startTest("checkHomePageTitle");
 		String title = homePage.getPageTitle(Constants1.HOME_PAGE_TITLE);
 		System.out.println(title);
-		Assert.assertEquals(title, Constants1.HOME_PAGE_TITLE, "login page title is in correct...");
-		
-		homePage.clickSignOut();
+		Assert.assertEquals(title, Constants1.HOME_PAGE_TITLE, "login page title is incorrect...");
+	}
+	
+	@Test(priority=3)
+	public void verifyNewReleases(){
+		extentTest = extent.startTest("verifyNewReleases");
+		homePage.clickNewReleasesLink();
+		String title = homePage.getPageTitle(Constants1.NEWRELEASES_PAGE_TITLE);
+		System.out.println("New Releases page title is: " +title);
+		Assert.assertEquals(title, Constants1.NEWRELEASES_PAGE_TITLE, "New Releases title is incorrect...");
+		String title1 = homePage.getNewReleasesText();
+		System.out.println("New Releases page text is: " +title1);
+		Assert.assertEquals(title1, Constants1.NEWRELEASES_TEXT, "New Releases title is incorrect...");
 	}
 	
 	@AfterMethod
@@ -84,5 +80,4 @@ public class LoginTest extends ExtentBase{
 		basePage.quitBrowser();
 	}
 	
-
 }

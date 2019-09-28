@@ -17,7 +17,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 /**
  * 
  * @author Sambasiva
@@ -28,7 +27,7 @@ public class BasePage {
 	public WebDriver driver;
 	public Properties prop;
 	public static String flash;
-	
+		
 	public static final String USERNAME = "sambasiva4";
 	public static final String AUTOMATE_KEY = "M6xoMedSbYujfKwDdtqy";
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
@@ -125,5 +124,6 @@ public class BasePage {
 			System.out.println("some exception occurred while closing the browser");
 		}
 	}
+	
 
 }

@@ -3,16 +3,12 @@
 
 <suite name="Amazon Test Sanity Suite" verbose="3" parallel="tests">
 
-	<listeners>
-		<listener class-name="com.qa.amazon.listeners.ExtentReportListener" />
-		<listener class-name="com.qa.amazon.listeners.TestAllureListener" />
-
-	</listeners>
 
 	<test name="Amazon Sanity Test - chrome">
 	<parameter name="browser" value="chrome"></parameter>
 		<classes>
 			<class name="com.qa.amazon.tests.LoginTest" />
+			<class name="com.qa.amazon.tests.HomePageTest" />
  		</classes>
 	</test>
 	

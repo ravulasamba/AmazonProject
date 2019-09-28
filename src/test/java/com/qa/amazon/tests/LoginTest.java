@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qa.amazon.Base.BasePage;
@@ -27,11 +28,12 @@ public class LoginTest {
 	LoginPage loginPage;
 	HomePage homePage;
 
+	@Parameters("browser")
 	@BeforeMethod
-	public void setUp() {
+	public void setUp(String browser) {
 		basePage = new BasePage();
 		prop = basePage.initialize_properties();
-		driver = basePage.initialize_driver(prop);
+		driver = basePage.initialize_driver(prop,browser);
 		landingPage = new LandingPage(driver);
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);

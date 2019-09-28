@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Amazon Test Sanity Suite" verbose="3">
+<suite name="Amazon Test Sanity Suite" verbose="3" parallel="tests">
 
 	<listeners>
 		<listener class-name="com.qa.amazon.listeners.ExtentReportListener" />
@@ -9,7 +9,15 @@
 
 	</listeners>
 
-	<test name="Amazon Sanity Test">
+	<test name="Amazon Sanity Test - chrome">
+	<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.qa.amazon.tests.LoginTest" />
+ 		</classes>
+	</test>
+	
+	<test name="Amazon Sanity Test - firefox">
+	<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="com.qa.amazon.tests.LoginTest" />
  		</classes>

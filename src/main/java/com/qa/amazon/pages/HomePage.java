@@ -26,8 +26,20 @@ public class HomePage extends BasePage{
 			}
 			
 			public LoginPage clickSignOut(){
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				elementUtil.waitForElementPresent(signInTab);
 				elementUtil.doClick(signInTab);
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				elementUtil.waitForElementPresent(btnSignOut);
 				elementUtil.doClick(btnSignOut);
 				return new LoginPage(driver);

@@ -31,9 +31,9 @@ public class BasePage {
 	 * 
 	 * @return this method returns webdriver instance
 	 */
-	public WebDriver initialize_driver(Properties prop) {
+	public WebDriver initialize_driver(Properties prop,String browser1) {
 		// String browser = "chrome";
-		String browser = prop.getProperty("browser");
+		String browser = browser1;
 		String headless = prop.getProperty("headless");
 		flash = prop.getProperty("elementflash");
 
@@ -48,7 +48,8 @@ public class BasePage {
 				driver = new ChromeDriver();
 			}
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver.exe");
+			//WebDriverManager.firefoxdriver().setup();
 			if (headless.equalsIgnoreCase("yes")) {
 				FirefoxOptions fo = new FirefoxOptions();
 				fo.addArguments("--headless");

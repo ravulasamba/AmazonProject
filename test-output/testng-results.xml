@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Amazon Test Sanity Suite" duration-ms="23668" started-at="2019-09-27T20:41:42Z" finished-at="2019-09-27T20:42:06Z">
+  <suite name="Amazon Test Sanity Suite" duration-ms="64585" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:28:04Z">
     <groups>
     </groups>
-    <test name="Amazon Sanity Test" duration-ms="23668" started-at="2019-09-27T20:41:42Z" finished-at="2019-09-27T20:42:06Z">
+    <test name="Amazon Sanity Test - chrome" duration-ms="54429" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:54Z">
       <class name="com.qa.amazon.tests.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.amazon.tests.LoginTest@7e07db1f]" name="setUp" is-config="true" duration-ms="10028" started-at="2019-09-27T20:41:42Z" finished-at="2019-09-27T20:41:52Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="setUp" is-config="true" duration-ms="14598" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@7e07db1f]" name="loginTest" duration-ms="12650" started-at="2019-09-27T20:41:52Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-27T20:42:05Z">
+        <test-method status="PASS" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="loginTest" duration-ms="39002" started-at="2019-09-28T06:27:14Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-28T06:27:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@7e07db1f]" name="tearDown" is-config="true" duration-ms="749" started-at="2019-09-27T20:42:05Z" finished-at="2019-09-27T20:42:06Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="tearDown" is-config="true" duration-ms="763" started-at="2019-09-28T06:27:53Z" finished-at="2019-09-28T06:27:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.amazon.tests.LoginTest -->
-    </test> <!-- Amazon Sanity Test -->
+    </test> <!-- Amazon Sanity Test - chrome -->
+    <test name="Amazon Sanity Test - firefox" duration-ms="64585" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:28:04Z">
+      <class name="com.qa.amazon.tests.LoginTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="setUp" is-config="true" duration-ms="14004" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="loginTest" duration-ms="38098" started-at="2019-09-28T06:27:14Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-28T06:27:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="tearDown" is-config="true" duration-ms="12139" started-at="2019-09-28T06:27:52Z" finished-at="2019-09-28T06:28:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.amazon.tests.LoginTest -->
+    </test> <!-- Amazon Sanity Test - firefox -->
   </suite> <!-- Amazon Test Sanity Suite -->
 </testng-results>

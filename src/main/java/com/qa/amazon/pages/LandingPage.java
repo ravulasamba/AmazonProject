@@ -23,7 +23,12 @@ public class LandingPage extends BasePage{
 	}
 	
 	public boolean hoverOnSignIn(){
-		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		elementUtil.waitForElementPresent(signInTab);
 		elementUtil.doClick(signInTab);
 		elementUtil.waitForElementPresent(btnSignIn);

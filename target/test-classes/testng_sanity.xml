@@ -16,10 +16,10 @@
  		</classes>
 	</test>
 	
-	<test name="Amazon Sanity Test - firefox">
-	<parameter name="browser" value="firefox"></parameter>
-		<classes>
-			<class name="com.qa.amazon.tests.LoginTest" />
- 		</classes>
-	</test>
+<!-- 	<test name="Amazon Sanity Test - firefox"> -->
+<!-- 	<parameter name="browser" value="firefox"></parameter> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.qa.amazon.tests.LoginTest" /> -->
+<!--  		</classes> -->
+<!-- 	</test> -->
 </suite>

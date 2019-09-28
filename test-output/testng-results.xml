@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Amazon Test Sanity Suite" duration-ms="64585" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:28:04Z">
+  <suite name="Amazon Test Sanity Suite" duration-ms="64037" started-at="2019-09-28T07:29:16Z" finished-at="2019-09-28T07:30:20Z">
     <groups>
     </groups>
-    <test name="Amazon Sanity Test - chrome" duration-ms="54429" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:54Z">
+    <test name="Amazon Sanity Test - chrome" duration-ms="64037" started-at="2019-09-28T07:29:16Z" finished-at="2019-09-28T07:30:20Z">
       <class name="com.qa.amazon.tests.LoginTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="setUp" is-config="true" duration-ms="14598" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:14Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="setUp" is-config="true" duration-ms="10982" started-at="2019-09-28T07:29:16Z" finished-at="2019-09-28T07:29:27Z">
           <params>
             <param index="0">
               <value>
@@ -18,38 +18,59 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="loginTest" duration-ms="39002" started-at="2019-09-28T06:27:14Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-28T06:27:53Z">
+        <test-method status="FAIL" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="loginTest" duration-ms="51715" started-at="2019-09-28T07:29:28Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-28T07:30:19Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for title to contain "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in". Current title: "Authentication required" (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BGRS6LU', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Windows\proxy\scoped_dir...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:2634}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 77.0.3865.75, webStorageEnabled: true, webdriver.remote.sessionid: 30a0366d99e8a62db5286b926ca...}
+Session ID: 30a0366d99e8a62db5286b926caf7ddb8b2264fb]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to contain "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in". Current title: "Authentication required" (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BGRS6LU', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Windows\proxy\scoped_dir...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:2634}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 77.0.3865.75, webStorageEnabled: true, webdriver.remote.sessionid: 30a0366d99e8a62db5286b926ca...}
+Session ID: 30a0366d99e8a62db5286b926caf7ddb8b2264fb
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.qa.amazon.util.ElementUtil.waitForPageTitle(ElementUtil.java:70)
+at com.qa.amazon.pages.HomePage.getHomePageTitle(HomePage.java:25)
+at com.qa.amazon.tests.LoginTest.loginTest(LoginTest.java:55)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="tearDown" is-config="true" duration-ms="763" started-at="2019-09-28T06:27:53Z" finished-at="2019-09-28T06:27:54Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@16d04d3d]" name="tearDown" is-config="true" duration-ms="1128" started-at="2019-09-28T07:30:19Z" finished-at="2019-09-28T07:30:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.amazon.tests.LoginTest -->
     </test> <!-- Amazon Sanity Test - chrome -->
-    <test name="Amazon Sanity Test - firefox" duration-ms="64585" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:28:04Z">
-      <class name="com.qa.amazon.tests.LoginTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="setUp" is-config="true" duration-ms="14004" started-at="2019-09-28T06:26:59Z" finished-at="2019-09-28T06:27:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginTest()[pri:1, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="loginTest" duration-ms="38098" started-at="2019-09-28T06:27:14Z" description="login test with correct username and correct password, check title and logout...." finished-at="2019-09-28T06:27:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.amazon.tests.LoginTest@7d8995e]" name="tearDown" is-config="true" duration-ms="12139" started-at="2019-09-28T06:27:52Z" finished-at="2019-09-28T06:28:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.amazon.tests.LoginTest -->
-    </test> <!-- Amazon Sanity Test - firefox -->
   </suite> <!-- Amazon Test Sanity Suite -->
 </testng-results>

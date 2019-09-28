@@ -3,6 +3,8 @@ package com.qa.amazon.Base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -11,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -24,28 +28,45 @@ public class BasePage {
 	public WebDriver driver;
 	public Properties prop;
 	public static String flash;
+	
+	public static final String USERNAME = "sambasiva4";
+	public static final String AUTOMATE_KEY = "M6xoMedSbYujfKwDdtqy";
+	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 
 	/**
 	 * This method is used to initialize the driver on the basis of given
 	 * browser
 	 * 
 	 * @return this method returns webdriver instance
+	 * @throws MalformedURLException 
 	 */
-	public WebDriver initialize_driver(Properties prop,String browser1) {
+	public WebDriver initialize_driver(Properties prop,String browser1) throws MalformedURLException {
 		// String browser = "chrome";
 		String browser = browser1;
 		String headless = prop.getProperty("headless");
 		flash = prop.getProperty("elementflash");
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			//WebDriverManager.chromedriver().setup();
+			
+			//browserstack
+		    DesiredCapabilities caps = new DesiredCapabilities();
+		    caps.setCapability("browser", "Chrome");
+		    caps.setCapability("browser_version", "77.0");
+		    caps.setCapability("os", "Windows");
+		    caps.setCapability("os_version", "10");
+		    caps.setCapability("resolution", "1024x768");
+		    caps.setCapability("name", "Amazon Sample Test");
+		    /////
+		    
+		    //WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
 			if (headless.equalsIgnoreCase("yes")) {
 				ChromeOptions co = new ChromeOptions();
 				co.addArguments("--headless");
 				driver = new ChromeDriver(co);
 			} else {
-				driver = new ChromeDriver();
+				//driver = new ChromeDriver();
+				driver = new RemoteWebDriver(new URL(URL), caps);
 			}
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/src/test/resources/geckodriver.exe");

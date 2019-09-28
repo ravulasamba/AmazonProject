@@ -66,7 +66,7 @@ public class ElementUtil extends BasePage {
 	}
 
 	public String waitForPageTitle(String title) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.titleContains(title));
 		return driver.getTitle();
 	}

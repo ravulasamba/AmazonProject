@@ -1,5 +1,6 @@
 package com.qa.amazon.tests;
 
+import java.net.MalformedURLException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -30,7 +31,7 @@ public class LoginTest {
 
 	@Parameters("browser")
 	@BeforeMethod
-	public void setUp(String browser) {
+	public void setUp(String browser) throws MalformedURLException {
 		basePage = new BasePage();
 		prop = basePage.initialize_properties();
 		driver = basePage.initialize_driver(prop,browser);
